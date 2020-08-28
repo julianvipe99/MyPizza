@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
 
-    <TextView
-        android:id="@+id/textview_first"
+    tools:context="Fragments.FirstFragment">
+
+    <ImageView
+        android:id="@+id/pizza_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
+        android:src="@drawable/pizza_logo"
         app:layout_constraintBottom_toTopOf="@id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="360dp"
@@ -35,40 +38,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/create_account"
         />
-
+<LinearLayout
+    android:id="@+id/create_account"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toTopOf="@id/login"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@id/password_Acces">
     <TextView
-        android:id="@+id/create_account"
+        android:id="@+id/string_create_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/createA"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/password_Acces"
         />
-
     <TextView
         android:id="@+id/linkCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="56dp"
+        android:layout_marginRight="64dp"
         android:text="@string/linkCreateA"
-        android:textColorLink="@color/linkcolor"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="@id/create_account"
-        app:layout_constraintStart_toStartOf="@id/create_account"
-        app:layout_constraintTop_toTopOf="@id/password_Acces" />
-
+        android:textColorLink="@color/linkcolor"/>
+</LinearLayout>
     <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
+        android:id="@+id/login"
+        android:layout_width="336dp"
         android:layout_height="wrap_content"
-        android:text="@string/next"
+        android:text="@string/Login"
+        android:textColor="@color/background"
+        android:background="@drawable/rounded_corners"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first"
+        app:layout_constraintTop_toBottomOf="@id/pizza_logo"
         app:layout_constraintVertical_bias="0.738" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,17 +7,20 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.mypizza.FirstFragment"
+        android:name="Fragments.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/to_create_account"
+            app:destination="@id/ThirdFragment"/>
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.mypizza.SecondFragment"
+        android:name="Fragments.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
@@ -25,4 +28,10 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/ThirdFragment"
+        android:name="Fragments.ThirdFragment"
+        android:label="@string/third_fragment_label"
+        tools:layout="@layout/fragment_third"
+        />
 </navigation>

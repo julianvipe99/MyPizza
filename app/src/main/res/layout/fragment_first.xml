@@ -12,21 +12,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/pizza_logo"
-        app:layout_constraintBottom_toTopOf="@id/email"
+        android:layout_marginTop="124dp"
+        app:layout_constraintBottom_toTopOf="@id/form"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pizza_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login">
     <EditText
         android:id="@+id/email"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:text="@string/email"
         app:layout_constraintBottom_toTopOf="@id/password_Acces"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <EditText
@@ -34,34 +42,38 @@
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:text="@string/passwordA"
+        app:layout_constraintTop_toBottomOf="@id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/create_account"
         />
-<LinearLayout
-    android:id="@+id/create_account"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    app:layout_constraintBottom_toTopOf="@id/login"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="@id/password_Acces">
-    <TextView
-        android:id="@+id/string_create_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:text="@string/createA"
-        />
-    <TextView
-        android:id="@+id/linkCreate"
+
+    <LinearLayout
+        android:id="@+id/create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="64dp"
-        android:text="@string/linkCreateA"
-        android:textColorLink="@color/linkcolor"/>
-</LinearLayout>
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/password_Acces"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/string_create_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/createA" />
+
+        <TextView
+            android:id="@+id/linkCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/linkCreateA"
+            android:textColorLink="@color/linkcolor"
+            android:textColor="@color/linkcolor"/>
+    </LinearLayout>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/login"
         android:layout_width="336dp"
@@ -71,8 +83,6 @@
         android:background="@drawable/rounded_corners"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pizza_logo"
-        app:layout_constraintVertical_bias="0.738" />
+        app:layout_constraintTop_toBottomOf="@id/form" />
 </androidx.constraintlayout.widget.ConstraintLayout>

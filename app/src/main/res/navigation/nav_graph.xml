@@ -3,43 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/Login">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="Fragments.FirstFragment"
+        android:id="@+id/Login"
+        android:name="Fragments.Login"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/login">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/MainPage" />
         <action
             android:id="@+id/to_create_account"
             app:destination="@id/ThirdFragment"/>
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="Fragments.SecondFragment"
+        android:id="@+id/MainPage"
+        android:name="Fragments.MainPage"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/main_page">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/Login" />
     </fragment>
     <fragment
         android:id="@+id/ThirdFragment"
-        android:name="Fragments.ThirdFragment"
+        android:name="Fragments.CreateAccount"
         android:label="@string/third_fragment_label"
-        tools:layout="@layout/fragment_third">
+        tools:layout="@layout/create_account">
 
         <action
             android:id="@+id/action_ThirdFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/Login" />
         <action
             android:id="@+id/action_ThirdFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/MainPage" />
 
     </fragment>
 </navigation>

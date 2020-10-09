@@ -71,27 +71,5 @@
         tools:listitem="@layout/pizza_list"
         />
 
-    <Button
-        android:id="@+id/button_second"
-        android:layout_width="336dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:background="@drawable/rounded_corners"
-        android:text="@string/logout"
-        android:textColor="@color/background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/Red"
-        app:menu="@menu/bottom_nav_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

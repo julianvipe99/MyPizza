@@ -16,20 +16,16 @@
             app:destination="@id/MainPage" />
         <action
             android:id="@+id/to_create_account"
-            app:destination="@id/ThirdFragment"/>
+            app:destination="@id/createA"/>
     </fragment>
     <fragment
         android:id="@+id/MainPage"
         android:name="com.example.mypizza.ui.fragments.MainPage"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/main_page">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/Login" />
     </fragment>
     <fragment
-        android:id="@+id/ThirdFragment"
+        android:id="@+id/createA"
         android:name="com.example.mypizza.ui.fragments.CreateAccount"
         android:label="@string/third_fragment_label"
         tools:layout="@layout/create_account">
@@ -40,6 +36,22 @@
         <action
             android:id="@+id/action_ThirdFragment_to_SecondFragment"
             app:destination="@id/MainPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/configu"
+        android:name="com.example.mypizza.ui.fragments.Config"
+        android:label="@string/config"
+        tools:layout="@layout/config_page">
+    <action
+        android:id="@+id/action_SecondFragment_to_FirstFragment"
+        app:destination="@id/Login" />
 
+        </fragment>
+    <fragment
+        android:id="@+id/search"
+        android:name="com.example.mypizza.ui.fragments.Search"
+        android:label="@string/action_search"
+        tools:layout="@layout/search_page"
+        >
     </fragment>
 </navigation>

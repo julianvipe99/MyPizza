@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,12 +19,12 @@ import kotlinx.android.synthetic.main.main_page.*
 import javax.inject.Inject
 
 
-class MainPage : DaggerFragment() {
+class MainPage : Fragment() {
 
 
-    @Inject lateinit var viewModel: PizzasViewModel
-
-    val pizzaAdapter= GroupAdapter<GroupieViewHolder>()
+//    @Inject lateinit var viewModel: PizzasViewModel
+//
+   val pizzaAdapter= GroupAdapter<GroupieViewHolder>()
 
 
     override fun onCreateView(
@@ -36,10 +37,6 @@ class MainPage : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<Button>(R.id.button_second).setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-        }
-
 
         Reciclerview_favorite.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         Reciclerview_favorite.adapter=pizzaAdapter
@@ -48,15 +45,15 @@ class MainPage : DaggerFragment() {
         Reciclerview_recommended.adapter=pizzaAdapter
 
     }
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        viewModel.getPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
-            pizzaAdapter.addAll(
-                pizzas.map { PizzaItem(it) }
-            )
-        })
-    }
+//    override fun onActivityCreated(savedInstanceState: Bundle?) {
+//        super.onActivityCreated(savedInstanceState)
+//
+//        viewModel.getPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
+//            pizzaAdapter.addAll(
+//                pizzas.map { PizzaItem(it) }
+//            )
+//        })
+//    }
 
 
 

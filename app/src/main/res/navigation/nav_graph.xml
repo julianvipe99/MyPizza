@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/Login"
-        android:name="Fragments.Login"
+        android:name="com.example.mypizza.ui.fragments.Login"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/login">
 
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/MainPage"
-        android:name="Fragments.MainPage"
+        android:name="com.example.mypizza.ui.fragments.MainPage"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/main_page">
 
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/ThirdFragment"
-        android:name="Fragments.CreateAccount"
+        android:name="com.example.mypizza.ui.fragments.CreateAccount"
         android:label="@string/third_fragment_label"
         tools:layout="@layout/create_account">
 

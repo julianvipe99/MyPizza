@@ -20,6 +20,7 @@
             app:layout_constraintBottom_toTopOf="@id/pizza_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            tool:src="image pizza"
             />
 
         <TextView

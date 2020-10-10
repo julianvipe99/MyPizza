@@ -1,6 +1,5 @@
-package com.example.mypizza.pizza.ui
+package com.example.mypizza.pizzafav.ui
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.domain.model.Pizza
@@ -23,10 +22,10 @@ class PizzasViewModel
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeWith(object : DisposableSingleObserver<List<Pizza>>()  {
                         override fun onSuccess(t: List<Pizza>?) {
-                            Log.e("List from service", t.toString())
+                            pizzasLiveData.value=t
                         }
                         override fun onError(e: Throwable?) {
-                            Log.e("ERROR", e.toString())
+                            pizzasErrorLiveData.value=Unit
                         }
                     })
             )

@@ -2,6 +2,8 @@ package com.example.data.di
 
 import com.example.data.source.api.pizza.fav.client.PizzaApiClient
 import com.example.data.source.api.pizza.fav.client.PizzaApiService
+import com.example.data.source.api.pizza.rec.client.PizzaRecApiClient
+import com.example.data.source.api.pizza.rec.client.PizzaRecApiService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -14,7 +16,7 @@ class DataSourceApiModule {
     @Provides
     internal fun provideRetrofit() =
         Retrofit.Builder()
-            .baseUrl("http://localhost:3000")
+            .baseUrl("https://my-json-server.typicode.com/julianvipe99/pizza/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -22,4 +24,9 @@ class DataSourceApiModule {
     @Provides
     internal fun providePizzaApiClient(retrofit: Retrofit)=
         PizzaApiClient(retrofit.create(PizzaApiService::class.java))
+
+    @Singleton
+    @Provides
+    internal  fun providePizzaRecApiClient(retrofit: Retrofit)=
+        PizzaRecApiClient(retrofit.create(PizzaRecApiService::class.java))
 }

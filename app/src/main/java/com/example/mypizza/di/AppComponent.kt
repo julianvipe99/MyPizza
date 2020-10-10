@@ -2,9 +2,11 @@ package com.example.mypizza.di
 
 import android.app.Application
 import com.example.data.di.DataPizzaModule
+import com.example.data.di.DataRecPizzaModule
 import com.example.data.di.DataSourceApiModule
 import com.example.mypizza.TestApplication
-import com.example.mypizza.pizza.di.PizzaModule
+import com.example.mypizza.pizzafav.di.PizzaModule
+import com.example.mypizza.pizzarec.PizzaRecModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -19,6 +21,8 @@ import javax.inject.Singleton
         TestModule::class,
         PizzaModule::class,
         DataPizzaModule::class,
+        PizzaRecModule::class,
+        DataRecPizzaModule::class,
         DataSourceApiModule::class
     ]
 )

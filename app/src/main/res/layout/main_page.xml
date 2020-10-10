@@ -11,15 +11,14 @@
         android:id="@+id/crea_tupizza_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="@string/pizza_create"
-        android:textStyle="bold"
         android:textColor="@color/design_default_color_primary"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/pizza_logo"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/pizza_logo"
@@ -33,15 +32,19 @@
         app:layout_constraintTop_toBottomOf="@id/crea_tupizza_label"
 
         />
+
     <TextView
         android:id="@+id/favorite_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="Favoritos"
-        app:layout_constraintTop_toBottomOf="@id/pizza_logo"
+        android:textColor="@color/design_default_color_primary"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/Reciclerview_favorite"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/pizza_logo" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Reciclerview_favorite"
         android:layout_width="match_parent"
@@ -52,15 +55,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/pizza_list"
     />
+
     <TextView
         android:id="@+id/recommended_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="Recomendadas"
-        app:layout_constraintTop_toBottomOf="@id/Reciclerview_favorite"
+        android:textColor="@color/design_default_color_primary"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/Reciclerview_recommended"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/Reciclerview_favorite" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Reciclerview_recommended"
         android:layout_width="match_parent"

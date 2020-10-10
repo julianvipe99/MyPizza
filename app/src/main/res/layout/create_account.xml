@@ -12,7 +12,7 @@
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
-        android:text="Nombre"
+        android:hint="Nombre"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/email"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         android:id="@+id/email"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:text="@string/email"
+        android:hint="@string/email"
         app:layout_constraintTop_toBottomOf="@id/name_Login"
         app:layout_constraintBottom_toTopOf="@id/password_Acces"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:id="@+id/password_Acces"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:text="@string/passwordA"
+        android:hint="@string/passwordA"
         app:layout_constraintTop_toBottomOf="@id/email"
         app:layout_constraintBottom_toTopOf="@id/password_Acces2"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,37 +42,40 @@
         android:id="@+id/password_Acces2"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:text="Confirmar Contraseña"
+        android:hint="Confirmar Contraseña"
         app:layout_constraintTop_toBottomOf="@id/password_Acces"
         app:layout_constraintBottom_toTopOf="@id/crear_Cuenta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/> />
+        app:layout_constraintEnd_toEndOf="parent"/><![CDATA[ />
 
+
+    ]]>
 
     <Button
         android:id="@+id/crear_Cuenta"
         android:layout_width="199dp"
         android:layout_height="57dp"
-        android:text="Crar Cuenta"
-        android:textColor="@color/background"
         android:background="@drawable/rounded_corners"
-        app:layout_constraintTop_toBottomOf="@id/password_Acces2"
+        android:text="Crear Cuenta"
+        android:textColor="@color/background"
         app:layout_constraintBottom_toTopOf="@id/cancelar_Cuenta"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/password_Acces2" />
 
     <Button
         android:id="@+id/cancelar_Cuenta"
         android:layout_width="144dp"
         android:layout_height="44dp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/rounded_corners"
         android:text="Cancelar"
         android:textColor="@color/background"
-        android:background="@drawable/rounded_corners"
-        android:layout_marginBottom="124dp"
-        app:layout_constraintTop_toBottomOf="@id/crear_Cuenta"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/crear_Cuenta" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

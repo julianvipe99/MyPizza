@@ -33,6 +33,19 @@
         app:layout_constraintTop_toBottomOf="@id/crea_tupizza_label"
 
         />
+
+    <Button
+        android:layout_marginVertical="5dp"
+        android:layout_width="199dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/pizza_logo"
+        app:layout_constraintBottom_toTopOf="@+id/favorite_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/background"
+        android:background="@drawable/rounded_corners"
+        android:text="Crear pizza"/>
+
     <TextView
         android:id="@+id/favorite_label"
         android:layout_width="match_parent"

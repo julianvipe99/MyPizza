@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.CrearPizza">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipo de masa" />
+
+    <RadioGroup
+        android:id="@+id/rg_masa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_gruesa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gruesa"/>
+
+        <RadioButton
+            android:id="@+id/rb_delgada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delgada"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingredientes"/>
+
+    <CheckBox
+        android:id="@+id/cb_queso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Queso"/>
+    <CheckBox
+        android:id="@+id/cb_jamon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jamon"/>
+    <CheckBox
+        android:id="@+id/cb_champiñones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Champiñones"/>
+    <CheckBox
+        android:id="@+id/cb_Salchicha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salchicha"/>
+    <CheckBox
+        android:id="@+id/cb_Pimenton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pimenton"/>
+    <CheckBox
+        android:id="@+id/cb_atun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Atun"/>
+    <CheckBox
+        android:id="@+id/cb_aceitunas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aceitunas"/>
+    <CheckBox
+        android:id="@+id/cb_pepperoni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pepperoni"/>
+    <CheckBox
+        android:id="@+id/cb_pollo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pollo"/>
+    <CheckBox
+        android:id="@+id/cb_bacon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bacon"/>
+
+    <Button
+        android:id="@+id/btn_enviar"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/piz_creada"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Hola"/>
+    
+</LinearLayout>

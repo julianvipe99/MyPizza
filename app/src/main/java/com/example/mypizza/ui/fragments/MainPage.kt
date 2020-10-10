@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mypizza.R
-import com.example.mypizza.pizza.ui.PizzasViewModel
+import com.example.mypizza.pizzafav.ui.PizzasViewModel
+import com.example.mypizza.pizzarec.RecPizzasViewModel
 import com.example.mypizza.ui.adapter.PizzaItem
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
@@ -19,12 +17,14 @@ import kotlinx.android.synthetic.main.main_page.*
 import javax.inject.Inject
 
 
-class MainPage : Fragment() {
+class MainPage : DaggerFragment() {
 
 
-//    @Inject lateinit var viewModel: PizzasViewModel
-//
-   val pizzaAdapter= GroupAdapter<GroupieViewHolder>()
+    @Inject lateinit var viewModelPizzafav: PizzasViewModel
+    @Inject lateinit var viewModelPizzaRec: RecPizzasViewModel
+
+    val pizzaFavAdapter= GroupAdapter<GroupieViewHolder>()
+    val pizzaRecAdapter= GroupAdapter<GroupieViewHolder>()
 
 
     override fun onCreateView(
@@ -39,21 +39,27 @@ class MainPage : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Reciclerview_favorite.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        Reciclerview_favorite.adapter=pizzaAdapter
+        Reciclerview_favorite.adapter=pizzaFavAdapter
 
         Reciclerview_recommended.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false )
-        Reciclerview_recommended.adapter=pizzaAdapter
+        Reciclerview_recommended.adapter=pizzaRecAdapter
 
     }
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//
-//        viewModel.getPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
-//            pizzaAdapter.addAll(
-//                pizzas.map { PizzaItem(it) }
-//            )
-//        })
-//    }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+      super.onActivityCreated(savedInstanceState)
+
+        viewModelPizzafav.getPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
+           pizzaFavAdapter.addAll(
+                pizzas.map { PizzaItem(it) }
+            )
+           })
+        viewModelPizzaRec.getRecPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
+            pizzaRecAdapter.addAll(
+                pizzas.map{PizzaItem(it)}
+            )
+        })
+
+    }
 
 
 

@@ -14,7 +14,6 @@ class PizzaItem(val pizza: Pizza):Item() {
     override fun bind(viewHolder: GroupieViewHolder, position: Int){
         viewHolder.itemView.apply {
             pizza_name.text=pizza.name
-
             Glide.with(this)
                 .load(pizza.url)
                 .into(pizza_image)

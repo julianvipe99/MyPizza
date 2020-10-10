@@ -1,4 +1,4 @@
-package com.example.mypizza.pizza.di
+package com.example.mypizza.pizzafav.di
 
 import com.example.data.repository.PizzaRepositoryImpl
 import com.example.domain.usecase.GetAllPizzaUsesCase

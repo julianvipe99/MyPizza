@@ -1,7 +1,7 @@
 package com.example.mypizza.pizzafav.di
 
 import com.example.data.repository.PizzaRepositoryImpl
-import com.example.domain.usecase.GetAllPizzaUsesCase
+import com.example.domain.usecase.GetAllFavPizzaUsesCase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -12,5 +12,5 @@ class PizzaModule {
     @Provides
     internal fun provideGetPizzaUseCase(
         pizzaRepositoryImpl: PizzaRepositoryImpl
-    )=GetAllPizzaUsesCase(pizzaRepositoryImpl)
+    )=GetAllFavPizzaUsesCase(pizzaRepositoryImpl)
 }

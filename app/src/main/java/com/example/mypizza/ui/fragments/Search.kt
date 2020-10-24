@@ -2,17 +2,21 @@ package com.example.mypizza.ui.fragments
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Button
-import android.widget.SearchView
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mypizza.R
+import com.example.mypizza.pizzaall.AllPizzasViewModel
+import com.example.mypizza.ui.adapter.PizzaAllItem
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
-import kotlinx.android.synthetic.main.main_page.*
+import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.search_page.*
+import javax.inject.Inject
 
-class Search:Fragment() {
+class Search : DaggerFragment() {
+
+
+    @Inject lateinit var viewModelPizzaAll: AllPizzasViewModel
 
     val pizzaAdapter= GroupAdapter<GroupieViewHolder>()
 
@@ -25,6 +29,10 @@ class Search:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        Reciclerview_all_pizzas.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        Reciclerview_all_pizzas.adapter=pizzaAdapter
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -32,8 +40,17 @@ class Search:Fragment() {
 
         super.onCreateOptionsMenu(menu, inflater)
 
-        Reciclerview_favorite.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        Reciclerview_favorite.adapter=pizzaAdapter
+
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        viewModelPizzaAll.getAllPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
+            pizzaAdapter.addAll(
+                pizzas.map { PizzaAllItem(it) }
+            )
+        })
     }
 
 

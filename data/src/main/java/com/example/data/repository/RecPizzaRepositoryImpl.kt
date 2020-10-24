@@ -1,6 +1,6 @@
 package com.example.data.repository
 
-import com.example.data.source.api.pizza.fav.entity.mapToDomain
+import com.example.data.source.api.pizza.rec.entity.mapToDomain
 import com.example.data.source.api.pizza.rec.client.PizzaRecApiClient
 import com.example.domain.model.Pizza
 import com.example.domain.repository.RecPizzaRepository

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/pizza_logo"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="@dimen/dimension_124"
         app:layout_constraintBottom_toTopOf="@id/form"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toTopOf="@id/login">
     <EditText
         android:id="@+id/email"
-        android:layout_width="360dp"
+        android:layout_width="@dimen/fab_width"
         android:layout_height="wrap_content"
         android:text="@string/email"
         app:layout_constraintBottom_toTopOf="@id/password_Acces"
@@ -39,7 +39,7 @@
 
     <EditText
         android:id="@+id/password_Acces"
-        android:layout_width="360dp"
+        android:layout_width="@dimen/fab_width"
         android:layout_height="wrap_content"
         android:text="@string/passwordA"
         app:layout_constraintTop_toBottomOf="@id/email"
@@ -61,7 +61,7 @@
             android:id="@+id/string_create_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="@dimen/half_fab_margin"
             android:text="@string/createA" />
 
         <TextView
@@ -76,7 +76,7 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_width="336dp"
+        android:layout_width="@dimen/dimension_336"
         android:layout_height="wrap_content"
         android:text="@string/Login"
         android:textColor="@color/background"

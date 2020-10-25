@@ -1,10 +1,8 @@
 package com.example.mypizza.di
 
 import android.app.Application
-import com.example.data.di.DataAllPizzaModule
-import com.example.data.di.DataPizzaModule
-import com.example.data.di.DataRecPizzaModule
-import com.example.data.di.DataSourceApiModule
+import com.example.data.di.*
+import com.example.mypizza.Ingredients.IngredientsModule
 import com.example.mypizza.TestApplication
 import com.example.mypizza.pizzaall.PizzaAllModule
 import com.example.mypizza.pizzafav.di.PizzaModule
@@ -27,6 +25,8 @@ import javax.inject.Singleton
         DataRecPizzaModule::class,
         PizzaAllModule::class,
         DataAllPizzaModule::class,
+        IngredientsModule::class,
+        DataIngredientModule::class,
         DataSourceApiModule::class
     ]
 )

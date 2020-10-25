@@ -6,37 +6,50 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.domain.model.Ingrediente
+import com.example.mypizza.Ingredients.IngredientViewModel
 import com.example.mypizza.R
+import com.example.mypizza.ui.adapter.IngredientItem
+import com.example.mypizza.ui.adapter.PizzaAllItem
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.GroupieViewHolder
+import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_crear_pizza.*
+import javax.inject.Inject
 
 
-class CrearPizza : Fragment() {
+class CrearPizza : DaggerFragment() {
 
-    lateinit var rg_masa : RadioGroup
-    lateinit var rb_gruesa : RadioButton
-    lateinit var rb_delgada : RadioButton
 
-    lateinit var cb_queso : CheckBox
-    lateinit var cb_jamon : CheckBox
-    lateinit var cb_champiñones : CheckBox
-    lateinit var cb_salchicha : CheckBox
-    lateinit var cb_pimenton : CheckBox
-    lateinit var cb_atun : CheckBox
-    lateinit var cb_aceitunas : CheckBox
-    lateinit var cb_pepperoni : CheckBox
-    lateinit var cb_pollo : CheckBox
-    lateinit var cb_bacon : CheckBox
+    @Inject lateinit var viewModelIngrediente: IngredientViewModel
+    val ingredienteAdapter = GroupAdapter<GroupieViewHolder>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
 
-    }
+    ): View? = inflater.inflate(R.layout.fragment_crear_pizza, container, false)
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Reciclerview_Ingr.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        Reciclerview_Ingr.adapter=ingredienteAdapter
+    }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
+        viewModelIngrediente.getIngredentsLiveData().observe(viewLifecycleOwner, Observer { ingredient ->
+            ingredienteAdapter.addAll(
+                ingredient.map { IngredientItem(it) }
+            )
+        })
     }
 
 }

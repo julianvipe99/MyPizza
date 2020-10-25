@@ -18,12 +18,26 @@
             android:id="@+id/to_create_account"
             app:destination="@id/createA"/>
     </fragment>
+
     <fragment
         android:id="@+id/MainPage"
         android:name="com.example.mypizza.ui.fragments.MainPage"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/main_page">
+        <action
+            android:id="@+id/to_create_pizza"
+            app:destination="@id/crear_pizza"/>
+
     </fragment>
+
+    <fragment
+        android:id="@+id/crear_pizza"
+        android:name="com.example.mypizza.ui.fragments.CrearPizza"
+        android:label="Crear Pizza"
+        tools:layout="@layout/fragment_crear_pizza"
+        >
+    </fragment>
+
     <fragment
         android:id="@+id/createA"
         android:name="com.example.mypizza.ui.fragments.CreateAccount"
@@ -54,4 +68,7 @@
         tools:layout="@layout/search_page"
         >
     </fragment>
+
+
+
 </navigation>

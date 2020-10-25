@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mypizza.R
 import com.example.mypizza.pizzafav.ui.PizzasViewModel
@@ -37,6 +38,11 @@ class MainPage : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        crearPizza.setOnClickListener{
+            findNavController().navigate(R.id.to_create_pizza)
+        }
+
 
         Reciclerview_favorite.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         Reciclerview_favorite.adapter=pizzaFavAdapter

@@ -4,17 +4,17 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools"
-    app:cardElevation="4dp"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginTop="8dp">
+    app:cardElevation="@dimen/Card_elevation"
+    android:layout_marginHorizontal="@dimen/fab_margin"
+    android:layout_marginTop="@dimen/half_fab_margin">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/pizza_image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="@dimen/image_dimen"
+            android:layout_height="@dimen/image_dimen"
             android:scaleType="centerInside"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/pizza_name"

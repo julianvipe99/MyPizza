@@ -10,6 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="@dimen/half_fab_margin"
         android:text="Tipo de masa" />
 
     <RadioGroup
@@ -21,12 +22,14 @@
             android:id="@+id/rb_gruesa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
             android:text="Gruesa"/>
 
         <RadioButton
             android:id="@+id/rb_delgada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
             android:text="Delgada"/>
 
     </RadioGroup>
@@ -34,71 +37,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="@dimen/half_fab_margin"
         android:text="Ingredientes"/>
 
-    <CheckBox
-        android:id="@+id/cb_queso"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Reciclerview_Ingr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Queso"/>
-    <CheckBox
-        android:id="@+id/cb_jamon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Jamon"/>
-    <CheckBox
-        android:id="@+id/cb_champiñones"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Champiñones"/>
-    <CheckBox
-        android:id="@+id/cb_Salchicha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Salchicha"/>
-    <CheckBox
-        android:id="@+id/cb_Pimenton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pimenton"/>
-    <CheckBox
-        android:id="@+id/cb_atun"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Atun"/>
-    <CheckBox
-        android:id="@+id/cb_aceitunas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Aceitunas"/>
-    <CheckBox
-        android:id="@+id/cb_pepperoni"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pepperoni"/>
-    <CheckBox
-        android:id="@+id/cb_pollo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pollo"/>
-    <CheckBox
-        android:id="@+id/cb_bacon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Bacon"/>
+        tools:listitem="@layout/ingredients_list"
+        />
 
     <Button
         android:id="@+id/btn_enviar"
-        android:layout_width="199dp"
+        android:layout_width="@dimen/dimension_200"
         android:layout_height="wrap_content"
         android:text="Enviar"
         android:layout_gravity="center_horizontal"/>
-
-    <TextView
-        android:id="@+id/piz_creada"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Hola"/>
-    
 </LinearLayout>

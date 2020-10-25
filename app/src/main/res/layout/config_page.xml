@@ -10,8 +10,8 @@
         android:id="@+id/config_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginLeft="@dimen/dimension_40"
+        android:layout_marginTop="@dimen/margin_24"
         android:text="@string/config"
         android:textStyle="bold"
         android:textSize="32dp"
@@ -22,9 +22,9 @@
 
     <Button
         android:id="@+id/button_second"
-        android:layout_width="336dp"
+        android:layout_width="@dimen/dimension_336"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="@dimen/fab_marginx4"
         android:background="@drawable/rounded_corners"
         android:text="@string/logout"
         android:textColor="@color/background"

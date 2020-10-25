@@ -4,6 +4,8 @@ import com.example.data.source.api.pizza.all.client.AllPizzaApiClient
 import com.example.data.source.api.pizza.all.client.AllPizzaApiService
 import com.example.data.source.api.pizza.fav.client.PizzaApiClient
 import com.example.data.source.api.pizza.fav.client.PizzaApiService
+import com.example.data.source.api.pizza.ingredients.client.IngredientesApiClient
+import com.example.data.source.api.pizza.ingredients.client.IngredientesApiService
 import com.example.data.source.api.pizza.rec.client.PizzaRecApiClient
 import com.example.data.source.api.pizza.rec.client.PizzaRecApiService
 import dagger.Module
@@ -36,4 +38,9 @@ class DataSourceApiModule {
     @Provides
     internal  fun providePizzaAllApiClient(retrofit: Retrofit)=
         AllPizzaApiClient(retrofit.create(AllPizzaApiService::class.java))
+
+    @Singleton
+    @Provides
+    internal  fun provideIngredientApiClient(retrofit: Retrofit)=
+        IngredientesApiClient(retrofit.create(IngredientesApiService::class.java))
 }

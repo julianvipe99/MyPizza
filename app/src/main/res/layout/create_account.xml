@@ -9,10 +9,10 @@
 
     <EditText
         android:id="@+id/name_Login"
-        android:layout_width="360dp"
+        android:layout_width="@dimen/fab_width"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:text="Nombre"
+        android:layout_marginTop="@dimen/dimension_124"
+        android:text="@string/name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/email"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,40 +20,40 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="360dp"
+        android:layout_width="@dimen/fab_width"
         android:layout_height="wrap_content"
         android:text="@string/email"
         app:layout_constraintTop_toBottomOf="@id/name_Login"
         app:layout_constraintBottom_toTopOf="@id/password_Acces"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/> />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
         android:id="@+id/password_Acces"
-        android:layout_width="360dp"
+        android:layout_width="@dimen/fab_width"
         android:layout_height="wrap_content"
         android:text="@string/passwordA"
         app:layout_constraintTop_toBottomOf="@id/email"
         app:layout_constraintBottom_toTopOf="@id/password_Acces2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
         android:id="@+id/password_Acces2"
-        android:layout_width="360dp"
+        android:layout_width="@dimen/fab_width"
         android:layout_height="wrap_content"
-        android:text="Confirmar Contraseña"
+        android:text="@string/conf_pass"
         app:layout_constraintTop_toBottomOf="@id/password_Acces"
         app:layout_constraintBottom_toTopOf="@id/crear_Cuenta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/> />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <Button
         android:id="@+id/crear_Cuenta"
-        android:layout_width="199dp"
-        android:layout_height="57dp"
-        android:text="Crar Cuenta"
+        android:layout_width="@dimen/dimension_200"
+        android:layout_height="@dimen/dimension_56"
+        android:text="@string/crear_cuent"
         android:textColor="@color/background"
         android:background="@drawable/rounded_corners"
         app:layout_constraintTop_toBottomOf="@id/password_Acces2"
@@ -63,12 +63,12 @@
 
     <Button
         android:id="@+id/cancelar_Cuenta"
-        android:layout_width="144dp"
-        android:layout_height="44dp"
-        android:text="Cancelar"
+        android:layout_width="@dimen/dimension_144"
+        android:layout_height="@dimen/dimension_40"
+        android:text="@string/cancelar"
         android:textColor="@color/background"
         android:background="@drawable/rounded_corners"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="@dimen/dimension_124"
         app:layout_constraintTop_toBottomOf="@id/crear_Cuenta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

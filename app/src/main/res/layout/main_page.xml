@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textColor="@color/background"
         android:background="@drawable/rounded_corners"
-        android:text="Crear pizza"/>
+        android:text="Crear Pizza"/>
 
     <TextView
         android:id="@+id/favorite_label"

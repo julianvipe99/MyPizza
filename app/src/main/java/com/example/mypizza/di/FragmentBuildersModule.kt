@@ -4,6 +4,7 @@ package com.example.mypizza.di
 import com.example.mypizza.ui.fragments.CrearPizza
 import com.example.mypizza.ui.fragments.MainPage
 import com.example.mypizza.ui.fragments.Search
+import com.example.mypizza.ui.fragments.pizzaSelected
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -16,5 +17,7 @@ abstract class FragmentBuildersModule {
     abstract fun contributeSearchFragment(): Search
     @ContributesAndroidInjector
     abstract fun contributeCrearPFragment(): CrearPizza
+    @ContributesAndroidInjector
+    abstract fun contributePizzaSFragment(): pizzaSelected
 
 }

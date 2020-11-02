@@ -27,6 +27,9 @@
         <action
             android:id="@+id/to_create_pizza"
             app:destination="@id/crear_pizza"/>
+        <action
+            android:id="@+id/to_pizza_select"
+            app:destination="@id/pizza_select"/>
 
     </fragment>
 
@@ -69,6 +72,16 @@
         >
     </fragment>
 
-
+    <fragment
+        android:id="@+id/pizza_select"
+        android:name="com.example.mypizza.ui.fragments.pizzaSelected"
+        android:label="Selected"
+        tools:layout="@layout/pizza_selected"
+        >
+        <argument
+            android:name="pizzaid"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
 
 </navigation>

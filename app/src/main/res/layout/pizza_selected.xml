@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+
+    <ImageView
+        android:id="@+id/pizza_image"
+        android:layout_width="@dimen/image_dimen"
+        android:layout_height="@dimen/image_dimen"
+        android:scaleType="centerInside"
+        android:layout_marginTop="@dimen/fab_marginx4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:src="image pizza"
+        />
+
+    <Button
+        android:id="@+id/small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimension_144"
+        android:text="S"
+        android:textSize="@dimen/fab_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/medium"
+        app:layout_constraintTop_toBottomOf="@id/pizza_image"
+        />
+    <Button
+        android:id="@+id/medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimension_144"
+        android:text="M"
+        android:textSize="@dimen/fab_margin"
+        app:layout_constraintStart_toEndOf="@id/small"
+        app:layout_constraintEnd_toStartOf="@id/large"
+        app:layout_constraintTop_toBottomOf="@id/pizza_image"
+        />
+    <Button
+        android:id="@+id/large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimension_144"
+        android:text="L"
+        android:textSize="@dimen/fab_margin"
+        app:layout_constraintTop_toBottomOf="@id/pizza_image"
+        app:layout_constraintStart_toEndOf="@id/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/buy"
+        android:layout_marginVertical="@dimen/half_fab_margin"
+        android:layout_width="@dimen/dimension_200"
+        android:layout_height="@dimen/dimension_40"
+        android:textColor="@color/background"
+        android:background="@drawable/rounded_corners"
+        android:text="Siguiente"
+        app:layout_constraintTop_toBottomOf="@id/medium"
+        app:layout_constraintBottom_toTopOf="@id/price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="total"
+        android:textSize="@dimen/fab_margin"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

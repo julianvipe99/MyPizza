@@ -7,9 +7,11 @@ import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 import kotlinx.android.synthetic.main.pizza_list.view.*
 
-class PizzaItem(val pizza: Pizza):Item() {
+class PizzaItem(
+    val pizza: Pizza,
+    val onItemClicked: (pizzaID:Int) -> Unit
 
-
+):Item() {
 
     override fun bind(viewHolder: GroupieViewHolder, position: Int){
         viewHolder.itemView.apply {
@@ -17,9 +19,15 @@ class PizzaItem(val pizza: Pizza):Item() {
             Glide.with(this)
                 .load(pizza.url)
                 .into(pizza_image)
+
+            setOnClickListener{
+                onItemClicked(pizza.id)
+            }
         }
 
     }
+
+
 
 
     override fun getLayout()=R.layout.pizza_list

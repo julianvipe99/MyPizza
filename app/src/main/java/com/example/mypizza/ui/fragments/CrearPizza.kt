@@ -18,6 +18,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_crear_pizza.*
+import kotlinx.android.synthetic.main.pizza_selected.*
 import javax.inject.Inject
 
 
@@ -37,6 +38,10 @@ class CrearPizza : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        btn_enviar.setOnClickListener{
+            findNavController().navigate(R.id.to_pay)
+        }
 
         Reciclerview_Ingr.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         Reciclerview_Ingr.adapter=ingredienteAdapter

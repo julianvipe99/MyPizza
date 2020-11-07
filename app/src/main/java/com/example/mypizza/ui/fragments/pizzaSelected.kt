@@ -1,14 +1,16 @@
 package com.example.mypizza.ui.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.mypizza.R
-import com.example.mypizza.pizzafav.ui.PizzasViewModel
+import com.example.mypizza.pizzaall.AllPizzasViewModel
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.pizza_selected.*
 import javax.inject.Inject
@@ -16,9 +18,13 @@ import javax.inject.Inject
 class pizzaSelected :DaggerFragment() {
 
     @Inject
-    lateinit var viewModelPizza: PizzasViewModel
+    lateinit var viewModelPizza: AllPizzasViewModel
 
    val args: pizzaSelectedArgs by navArgs()
+
+    var smallB=false;
+    var mediumB=false;
+    var largeB=false;
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,9 +33,18 @@ class pizzaSelected :DaggerFragment() {
 
     ): View? = inflater.inflate(R.layout.pizza_selected, container, false)
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        sizeSelected()
+
+        order.setOnClickListener{
+            findNavController().navigate(R.id.to_pay)
+        }
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModelPizza.getPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
+        viewModelPizza.getAllPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
 
             var pizzaId=args.pizzaid
 
@@ -41,8 +56,45 @@ class pizzaSelected :DaggerFragment() {
                 }
             }
         })
-
     }
 
+    fun sizeSelected(){
 
+        small.setOnClickListener{
+            smallB=true;
+            mediumB=false;
+            largeB=false;
+
+            small.setBackgroundResource(R.drawable.circle_red_button)
+            small.setTextColor(Color.WHITE)
+            medium.setBackgroundResource(R.drawable.circle_button)
+            medium.setTextColor(Color.BLACK)
+            large.setBackgroundResource(R.drawable.circle_button)
+            large.setTextColor(Color.BLACK)
+        }
+
+        medium.setOnClickListener{
+            smallB=false;
+            mediumB=true;
+            largeB=false;
+            medium.setBackgroundResource(R.drawable.circle_red_button)
+            medium.setTextColor(Color.WHITE)
+            small.setBackgroundResource(R.drawable.circle_button)
+            small.setTextColor(Color.BLACK)
+            large.setBackgroundResource(R.drawable.circle_button)
+            large.setTextColor(Color.BLACK)
+        }
+
+        large.setOnClickListener{
+            smallB=false;
+            mediumB=false;
+            largeB=true;
+            large.setBackgroundResource(R.drawable.circle_red_button)
+            large.setTextColor(Color.WHITE)
+            small.setBackgroundResource(R.drawable.circle_button)
+            small.setTextColor(Color.BLACK)
+            medium.setBackgroundResource(R.drawable.circle_button)
+            medium.setTextColor(Color.BLACK)
+        }
+    }
 }

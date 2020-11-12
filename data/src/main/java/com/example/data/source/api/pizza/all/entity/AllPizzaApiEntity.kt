@@ -6,7 +6,10 @@ data class AllPizzaApiEntity (
     val id: Int,
     val nombre: String?,
     val url:String?,
-    val description:String?
+    val description:String?,
+    val small: Int?,
+    val medium: Int?,
+    val large: Int?
 )
 
 fun AllPizzaApiEntity.mapToDomain()=
@@ -14,6 +17,9 @@ fun AllPizzaApiEntity.mapToDomain()=
         id,
         nombre?: "",
         url?: "",
-        description?:""
+        description?:"",
+        small?:0,
+        medium?:0,
+        large?:0
     )
 fun List<AllPizzaApiEntity>.mapToDomain()=this.map{it.mapToDomain()}

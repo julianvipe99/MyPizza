@@ -39,6 +39,10 @@
         android:label="Crear Pizza"
         tools:layout="@layout/fragment_crear_pizza"
         >
+        <action
+            android:id="@+id/to_pay"
+            app:destination="@id/pay_page"
+            />
     </fragment>
 
     <fragment
@@ -70,6 +74,9 @@
         android:label="@string/action_search"
         tools:layout="@layout/search_page"
         >
+        <action
+            android:id="@+id/to_pizza_select"
+            app:destination="@id/pizza_select"/>
     </fragment>
 
     <fragment
@@ -78,10 +85,26 @@
         android:label="Selected"
         tools:layout="@layout/pizza_selected"
         >
+        <action
+            android:id="@+id/to_pay"
+            app:destination="@id/pay_page"
+            />
         <argument
             android:name="pizzaid"
             app:argType="integer"
             android:defaultValue="1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pay_page"
+        android:name="com.example.mypizza.ui.fragments.payPage"
+        android:label="Pay"
+        tools:layout="@layout/end_order"
+        >
+        <argument
+            android:name="pizzaValue"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 
 </navigation>

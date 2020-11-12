@@ -2,70 +2,55 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/half_fab_margin"
-        android:text="Escoge el tamanho"
+        android:text="Finalizar Pedido"
         android:textSize="@dimen/fab_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/pizza_image"
+        app:layout_constraintBottom_toTopOf="@id/pizza_box"
         />
 
     <ImageView
-        android:id="@+id/pizza_image"
+        android:id="@+id/pizza_box"
         android:layout_width="@dimen/image_dimen"
         android:layout_height="@dimen/image_dimen"
         android:scaleType="centerInside"
         android:layout_marginTop="@dimen/fab_marginx4"
+        android:src="@drawable/pizza_box"
         app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:src="image pizza"
         />
 
-    <Button
-        android:id="@+id/small"
-        android:layout_width="@dimen/dimension_48"
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimension_144"
-        android:text="S"
-        android:textSize="@dimen/fab_margin"
-        android:background="@drawable/circle_button"
+        android:padding="@dimen/fab_margin"
+        android:text="Direccion:"
+        android:layout_marginTop="@dimen/fab_marginx4"
+        app:layout_constraintTop_toBottomOf="@+id/pizza_box"
+        app:layout_constraintBottom_toTopOf="@id/pay_method"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/medium"
-        app:layout_constraintTop_toBottomOf="@id/pizza_image"
+        app:layout_constraintEnd_toEndOf="parent"
         />
-    <Button
-        android:id="@+id/medium"
-        android:layout_width="@dimen/dimension_48"
+
+    <TextView
+        android:id="@+id/pay_method"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimension_144"
-        android:text="M"
-        android:textSize="@dimen/fab_margin"
-        android:background="@drawable/circle_button"
-        app:layout_constraintStart_toEndOf="@id/small"
-        app:layout_constraintEnd_toStartOf="@id/large"
-        app:layout_constraintTop_toBottomOf="@id/pizza_image"
-        />
-    <Button
-        android:id="@+id/large"
-        android:layout_width="@dimen/dimension_48"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimension_144"
-        android:text="L"
-        android:textSize="@dimen/fab_margin"
-        android:background="@drawable/circle_button"
-        app:layout_constraintTop_toBottomOf="@id/pizza_image"
-        app:layout_constraintStart_toEndOf="@id/medium"
+        android:padding="@dimen/fab_margin"
+        android:text="Medio de Pago:"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
@@ -76,25 +61,26 @@
         android:layout_height="@dimen/dimension_40"
         android:textColor="@color/background"
         android:background="@drawable/red_button"
-        android:text="Ordenar"
-        app:layout_constraintTop_toBottomOf="@id/medium"
-        app:layout_constraintBottom_toTopOf="@id/price_t"
+        android:text="Pagar"
+        android:layout_marginTop="@dimen/dimension_144"
+        app:layout_constraintTop_toBottomOf="@id/pay_method"
+        app:layout_constraintBottom_toTopOf="@id/total"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
     <TextView
-        android:id="@+id/price_t"
+        android:id="@+id/total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Total:"
+        android:text="total"
         android:textSize="@dimen/fab_margin"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/order"
+        android:padding="@dimen/fab_margin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

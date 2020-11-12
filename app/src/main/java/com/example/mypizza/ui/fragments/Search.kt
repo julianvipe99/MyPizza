@@ -2,7 +2,9 @@ package com.example.mypizza.ui.fragments
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mypizza.R
 import com.example.mypizza.pizzaall.AllPizzasViewModel
@@ -48,7 +50,12 @@ class Search : DaggerFragment() {
 
         viewModelPizzaAll.getAllPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
             pizzaAdapter.addAll(
-                pizzas.map { PizzaAllItem(it) }
+                pizzas.map { PizzaAllItem(it){
+                    Toast.makeText(requireContext(),"Pizza =$it", Toast.LENGTH_SHORT).show()
+
+                    val action = MainPageDirections.toPizzaSelect(it)
+                    findNavController().navigate(action)
+                } }
             )
         })
     }

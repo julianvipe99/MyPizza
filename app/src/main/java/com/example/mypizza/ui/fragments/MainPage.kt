@@ -45,7 +45,6 @@ class MainPage : DaggerFragment() {
             findNavController().navigate(R.id.to_create_pizza)
         }
 
-
         Reciclerview_favorite.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         Reciclerview_favorite.adapter=pizzaFavAdapter
 

@@ -101,6 +101,10 @@
         android:label="Pay"
         tools:layout="@layout/end_order"
         >
+        <argument
+            android:name="pizzaValue"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 
 </navigation>

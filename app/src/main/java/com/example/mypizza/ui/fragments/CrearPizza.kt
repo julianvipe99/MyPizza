@@ -28,6 +28,7 @@ class CrearPizza : DaggerFragment() {
     @Inject lateinit var viewModelIngrediente: IngredientViewModel
     val ingredienteAdapter = GroupAdapter<GroupieViewHolder>()
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -52,7 +53,7 @@ class CrearPizza : DaggerFragment() {
 
         viewModelIngrediente.getIngredentsLiveData().observe(viewLifecycleOwner, Observer { ingredient ->
             ingredienteAdapter.addAll(
-                ingredient.map { IngredientItem(it) }
+                ingredient.map { IngredientItem(it)}
             )
         })
     }

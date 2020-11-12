@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.example.domain.model.AllPizza
 import com.example.mypizza.R
 import com.example.mypizza.pizzaall.AllPizzasViewModel
 import dagger.android.support.DaggerFragment
@@ -19,12 +21,10 @@ class pizzaSelected :DaggerFragment() {
 
     @Inject
     lateinit var viewModelPizza: AllPizzasViewModel
+    lateinit var allPizza: AllPizza
 
-   val args: pizzaSelectedArgs by navArgs()
-
-    var smallB=false;
-    var mediumB=false;
-    var largeB=false;
+    val args: pizzaSelectedArgs by navArgs()
+    var price=0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,10 +38,16 @@ class pizzaSelected :DaggerFragment() {
         sizeSelected()
 
         order.setOnClickListener{
-            findNavController().navigate(R.id.to_pay)
+
+            if (price>0) {
+                val action = pizzaSelectedDirections.toPay(price)
+                findNavController().navigate(action)
+            }
+            else{
+                Toast.makeText(requireContext(),"Por favor seleccione un tamanho para al pizza.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModelPizza.getAllPizzasLivedata().observe(viewLifecycleOwner, Observer { pizzas ->
@@ -50,6 +56,7 @@ class pizzaSelected :DaggerFragment() {
 
             for (i in pizzas ){
                 if(i.id.equals(pizzaId)){
+                    allPizza=i;
                     Glide.with(this)
                         .load(i.url)
                         .into(pizza_image)
@@ -61,9 +68,8 @@ class pizzaSelected :DaggerFragment() {
     fun sizeSelected(){
 
         small.setOnClickListener{
-            smallB=true;
-            mediumB=false;
-            largeB=false;
+            price=allPizza.sSmall
+            price_t.text="Total: $"+price.toString()
 
             small.setBackgroundResource(R.drawable.circle_red_button)
             small.setTextColor(Color.WHITE)
@@ -74,9 +80,9 @@ class pizzaSelected :DaggerFragment() {
         }
 
         medium.setOnClickListener{
-            smallB=false;
-            mediumB=true;
-            largeB=false;
+            price=allPizza.sMedium
+            price_t.text="Total: $"+price.toString()
+
             medium.setBackgroundResource(R.drawable.circle_red_button)
             medium.setTextColor(Color.WHITE)
             small.setBackgroundResource(R.drawable.circle_button)
@@ -86,9 +92,9 @@ class pizzaSelected :DaggerFragment() {
         }
 
         large.setOnClickListener{
-            smallB=false;
-            mediumB=false;
-            largeB=true;
+            price=allPizza.sLarge
+            price_t.text="Total: $"+price.toString()
+
             large.setBackgroundResource(R.drawable.circle_red_button)
             large.setTextColor(Color.WHITE)
             small.setBackgroundResource(R.drawable.circle_button)
@@ -96,5 +102,6 @@ class pizzaSelected :DaggerFragment() {
             medium.setBackgroundResource(R.drawable.circle_button)
             medium.setTextColor(Color.BLACK)
         }
+
     }
 }

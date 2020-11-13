@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mypizza.R
 import kotlinx.android.synthetic.main.end_order.*
@@ -24,6 +25,10 @@ class payPage:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         total.text="Total: $"+args.pizzaValue
+
+        order.setOnClickListener{
+            findNavController().navigate(R.id.splash_pay)
+        }
     }
 
 }

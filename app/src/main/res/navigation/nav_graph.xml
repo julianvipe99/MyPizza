@@ -105,6 +105,21 @@
             android:name="pizzaValue"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/to_splash_pay"
+            app:destination="@id/splash_pay"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/splash_pay"
+        android:name="com.example.mypizza.ui.fragments.SplashPayScreen"
+        android:label="SplashPay"
+        tools:layout="@layout/splash_pay_screen"
+        >
+        <action
+            android:id="@+id/to_main_page_pa"
+            app:destination="@id/MainPage"
+            />
     </fragment>
 
 </navigation>

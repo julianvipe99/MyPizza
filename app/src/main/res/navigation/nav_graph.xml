@@ -106,19 +106,33 @@
             app:argType="integer"
             android:defaultValue="0" />
         <action
+            android:id="@+id/to_splash_pay"
+            app:destination="@id/splash_pay"
+            />
+        <action
             android:id="@+id/to_map"
-            app:destination="@id/map_page"
+            app:destination="@id/map"
             >
 
         </action>
     </fragment>
+    <fragment
+        android:id="@+id/splash_pay"
+        android:name="com.example.mypizza.ui.fragments.SplashPayScreen"
+        android:label="SplashPay"
+        tools:layout="@layout/splash_pay_screen"
+        >
+        <action
+            android:id="@+id/to_main_page_pa"
+            app:destination="@id/MainPage" />
+    </fragment>
 
     <fragment
-        android:id="@+id/map_page"
+        android:id="@+id/map"
         android:name="com.example.mypizza.ui.fragments.MapsFragment"
-        android:label="Mapa"
-        tools:layout="@layout/fragment_maps"
-        >
+        android:label="Maps"
+        tools:layout="@layout/fragment_maps">
+
     </fragment>
 
 </navigation>

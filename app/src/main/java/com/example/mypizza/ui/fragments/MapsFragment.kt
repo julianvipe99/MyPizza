@@ -10,10 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.example.mypizza.R
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationResult
+import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -24,8 +21,8 @@ import java.util.concurrent.TimeUnit
 
 class MapsFragment : Fragment(), OnMapReadyCallback {
 
-    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private var googleMap: GoogleMap? = null
+    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
 
     companion object {
@@ -34,7 +31,10 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
             android.Manifest.permission.ACCESS_COARSE_LOCATION
         )
     }
-
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireActivity())
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

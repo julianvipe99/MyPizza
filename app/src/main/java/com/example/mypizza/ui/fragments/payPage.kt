@@ -25,6 +25,10 @@ class payPage:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         total.text="Total: $"+args.pizzaValue
+
+        order.setOnClickListener{
+            findNavController().navigate(R.id.splash_pay)
+        }
         mapButton.setOnClickListener{
             findNavController().navigate(R.id.to_map)
         }

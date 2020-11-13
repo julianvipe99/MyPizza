@@ -105,6 +105,20 @@
             android:name="pizzaValue"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/to_map"
+            app:destination="@id/map_page"
+            >
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/map_page"
+        android:name="com.example.mypizza.ui.fragments.MapsFragment"
+        android:label="Mapa"
+        tools:layout="@layout/fragment_maps"
+        >
     </fragment>
 
 </navigation>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.ContentProviderCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,6 +47,7 @@ class CrearPizza : DaggerFragment() {
 
         Reciclerview_Ingr.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         Reciclerview_Ingr.adapter=ingredienteAdapter
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

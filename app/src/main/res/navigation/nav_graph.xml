@@ -109,6 +109,12 @@
             android:id="@+id/to_splash_pay"
             app:destination="@id/splash_pay"
             />
+        <action
+            android:id="@+id/to_map"
+            app:destination="@id/map"
+            >
+
+        </action>
     </fragment>
     <fragment
         android:id="@+id/splash_pay"
@@ -118,8 +124,15 @@
         >
         <action
             android:id="@+id/to_main_page_pa"
-            app:destination="@id/MainPage"
-            />
+            app:destination="@id/MainPage" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.example.mypizza.ui.fragments.MapsFragment"
+        android:label="Maps"
+        tools:layout="@layout/fragment_maps">
+
     </fragment>
 
 </navigation>

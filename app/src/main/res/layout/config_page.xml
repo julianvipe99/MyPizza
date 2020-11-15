@@ -14,7 +14,7 @@
         android:layout_marginTop="@dimen/margin_24"
         android:text="@string/config"
         android:textStyle="bold"
-        android:textSize="32dp"
+        android:textSize="@dimen/text_32"
         android:textColor="@color/design_default_color_primary"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

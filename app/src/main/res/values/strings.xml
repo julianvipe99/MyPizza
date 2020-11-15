@@ -17,6 +17,7 @@
     <string name="home">Estas en el home del app</string>
     <string name="logout">Cerrar sesión</string>
     <string name="pizza_create">Crea tu pizza</string>
+    <string name="createPizza">Crear Pizza</string>
     <string name="config">Configuracion</string>
     <string name="fav">Favoritos</string>
     <string name="rec">Recomendados</string>
@@ -24,10 +25,28 @@
     <string name="crear_cuent">Crear Cuenta</string>
     <string name="cancelar">Cancelar</string>
     <string name="name">Nombre</string>
+    <string name="finPedido">Finalizar Pedido</string>
+    <string name="address">Dirección:</string>
+    <string name="payment">Medio de Pago:</string>
+    <string name="pay">Pagar</string>
+    <string name="total">Total</string>
+    <string name="doughType">Tipo de masa</string>
+    <string name="thiccDough">Gruesa</string>
+    <string name="thinDough">Delgada</string>
+    <string name="ingredients">Ingredientes</string>
+    <string name="send">Enviar</string>
+    <string name="chooseSize">Elige el tamaño</string>
+    <string name="smallL">S</string>
+    <string name="mediumL">M</string>
+    <string name="largeL">L</string>
+    <string name="order">Ordenar</string>
+    <string name="total2">Total:</string>
 
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="splash_pedido" >Pedido Registrado</string>
 </resources>

@@ -29,6 +29,9 @@ class payPage:Fragment() {
         order.setOnClickListener{
             findNavController().navigate(R.id.splash_pay)
         }
+        mapButton.setOnClickListener{
+            findNavController().navigate(R.id.to_map)
+        }
     }
 
 }
